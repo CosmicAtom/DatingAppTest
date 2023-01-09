@@ -1,0 +1,7 @@
+https://localhost:7004/api/Account/register
+
+https://localhost:7004/api/Account/Login
+
+saurav1
+
+saurav
