@@ -1,0 +1,11 @@
+// const user = pm.response.json();
+
+// pm.test("Has properties", function(){
+//     pm.expect(user).to.have.property('username');
+//     pm.expect(user).to.have.property('token');
+// });
+
+// if(pm.test("Has properties")){
+//     pm.globals.set('token', user.token);
+//     console.log(user.token);
+// }

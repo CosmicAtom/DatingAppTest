@@ -1,27 +1,33 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Dating App</a>
+      <a class="navbar-brand" routerLink="/" routerLinkActive="active">Dating App</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf=" accountServices.currentUser$ | async">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="accountServices.currentUser$ | async">
+          <ng-container>
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" routerLink="/members" routerLinkActive="active">Matches</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Matches</a>
+            <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
+            <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Lists</a>
-          </li>
+        </ng-container>
         </ul>
+        
+        <div>
+          <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
+        </div>
+        
 
-        <div class="dropdown text-white" style="padding: 0 8px 0 0;" *ngIf="accountServices.currentUser$ | async" dropdown>
-          <a class="dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" dropdownToggle style="text-decoration: none;">WelCome User</a>
+        <div class="dropdown text-white" style="padding: 0 8px 0 0;" *ngIf="(accountServices.currentUser$|async) as users" dropdown>
+          <a class="dropdown-toggle text-light" role="button" data-bs-toggle="dropdown"
+           dropdownToggle style="text-decoration: none;">WelCome User</a>
+           <!-- {{ users.UserName | titlecase }} -->
           <div class="dropdown-menu" *dropdownMenu>
             <a class="dropdown-item">Edit Profile</a>
             <div class="dropdown-divider"></div>
