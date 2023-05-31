@@ -36,9 +36,9 @@ namespace API.Entities
 
         public ICollection<Photo> Photos { get; set; } 
 
-        public int GetAge()
-        {
-            return DateofBirth.CaculaterAge();
-        }
+        //public int GetAge()
+        //{
+        //    return DateofBirth.CaculaterAge();
+        //}
     } 
 }
