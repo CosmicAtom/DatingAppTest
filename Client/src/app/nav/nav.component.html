@@ -1,49 +1,49 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/" routerLinkActive="active">Dating App</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="user">
-        <ng-container>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/members" routerLinkActive="active">Matches</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
-          </li>
-        </ng-container>
-      </ul>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/" routerLinkActive="active">Dating App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="user">
+          <ng-container>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/members" routerLinkActive="active">Matches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
+            </li>
+          </ng-container>
+        </ul>
 
-      <!-- <div>
-        <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
-      </div> -->
+        <!-- <div>
+          <a class="nav-link" routerLink="/errors" routerLinkActive="active">Errors</a>
+        </div> -->
 
 
-      <div ngClass="dropdown text-white" style="padding: 0 8px 0 0;" *ngIf="user"
-        dropdown>
-        <a ngClass="dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" dropdownToggle
-          style="text-decoration: none;">Welcome {{ user.userName }} </a>
-        <div class="dropdown-menu" *dropdownMenu>
-          <a  routerLink="/member/edit" class="dropdown-item">Edit Profile</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" (click)="logout()">Logout</a>
+        <div ngClass="dropdown text-white" style="padding: 0 8px 0 0;" *ngIf="user"
+          dropdown>
+          <a ngClass="dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" dropdownToggle
+            style="text-decoration: none;">Welcome {{ user.userName }} </a>
+          <div class="dropdown-menu" *dropdownMenu>
+            <a  routerLink="/member/edit" class="dropdown-item">Edit Profile</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+          </div>
         </div>
-      </div>
 
-      <form class="d-flex" #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off"
-        *ngIf="user === null">
-        <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text"
-          placeholder="UserName">
-        <input name="password" [(ngModel)]="model.password" x class="form-control me-2" type="password"
-          placeholder="Password">
-        <button class="btn btn-outline-success" type="submit">Login</button>
-      </form>
+        <form class="d-flex" #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off"
+          *ngIf="user === null">
+          <input name="username" [(ngModel)]="model.username" class="form-control me-2" type="text"
+            placeholder="UserName">
+          <input name="password" [(ngModel)]="model.password" x class="form-control me-2" type="password"
+            placeholder="Password">
+          <button class="btn btn-outline-success" type="submit">Login</button>
+        </form>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>

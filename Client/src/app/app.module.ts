@@ -5,7 +5,6 @@ import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
@@ -20,7 +19,7 @@ import { ServerErrorComponent } from './error/server-error/server-error.componen
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { JstInterceptor } from './_intercept/jst.interceptor';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,8 +40,8 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule, 
     FormsModule,
+    HttpClientModule, 
     SharedModule
   ],
   providers: [
